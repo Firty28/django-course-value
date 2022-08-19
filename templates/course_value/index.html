@@ -1,0 +1,32 @@
+{% extends 'course_value/base.html' %}
+{% load static %}
+
+{% block user %}
+
+{% if user and user != "AnonymousUser" %}
+<li class="nav-item"><a href="#" class="nav-link link-dark px-2">{{ user }}</a></li>
+<li class="nav-item"><a href="{% url 'user:logout' %}" class="nav-link link-dark px-2">Выйти</a></li>
+
+{% else %} 
+<li class="nav-item"><a href="{% url 'user:login' %}" class="nav-link link-dark px-2">Войти</a></li>
+<li class="nav-item"><a href="{% url 'user:register' %}" class="nav-link link-dark px-2">Зарегестрироваться</a></li>
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+      <div class="container">
+        <div class="text-center link-danger">
+            САЙТ НАХОДИТСЯ НА СТАДИИ РАЗРАБОТКИ!!! <br>
+            Эта функция не доступна
+        </div>
+        <div class="text">
+            Выберите валюту
+        </div>
+        <div class="container__table value1">
+            <div class="valueUSD"><a href="#">USD</a></div>
+            <div class="valueEUR"><a href="#">EUR</a></div>
+            <div class="valueCNY"><a href="#">CNY</a></div>
+        </div>
+      </div>
+{% endblock %}

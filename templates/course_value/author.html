@@ -1,0 +1,29 @@
+{% extends 'course_value/base.html' %}
+{% load static %}
+
+{% block user %}
+
+{% if user and user != "AnonymousUser" %}
+<li class="nav-item"><a href="#" class="nav-link link-dark px-2">{{ user }}</a></li>
+<li class="nav-item"><a href="{% url 'user:logout' %}" class="nav-link link-dark px-2">Выйти</a></li>
+
+{% else %} 
+<li class="nav-item"><a href="{% url 'user:login' %}" class="nav-link link-dark px-2">Войти</a></li>
+<li class="nav-item"><a href="{% url 'user:register' %}" class="nav-link link-dark px-2">Зарегестрироваться</a></li>
+{% endif %}
+
+{% endblock %}
+
+{% block content %}
+      <div class="text-center link-danger">
+        САЙТ НАХОДИТСЯ НА СТАДИИ РАЗРАБОТКИ!!!
+    </div>
+      <div class="container">
+        <div class="text">Авторы</div>
+        <h1>Backend developer</h1>
+        <a href="https://t.me/SualMen">Telegramm</a> - @SualMen <br>
+        <a href="https://github.com/Firty28">GitHub</a>
+        <h1>Парсинг developer</h1>
+        Пусть он мне ссылки скинет свои, тогда и напишу его в авторы
+      </div>
+{% endblock %}
